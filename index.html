@@ -9,32 +9,53 @@
   </head>
   <body>
     <header class="header">
-      <a class="logo" href="#">
-        <img src="assets/images/logo.png" alt="" class="logo__img" />
-        <span class="logo__text">You.Do</span>
-      </a>
-      <div class="input">
-        <object
-          class="input__icon"
-          data="assets/icons/search-md.svg"
-          type="image/svg+xml"
-          aria-hidden="true"></object>
-        <input type="text" class="input__control" placeholder="Поиск" />
-      </div>
-      <div class="header__account">
-        <object
-          data="assets/icons/bell-01.svg"
-          type="image/svg+xml"
-          class="header__notifications"></object>
-        <object
-          data="assets/icons/settings-02.svg"
-          type="image/svg+xml"
-          class="header__settings"></object>
-        <img
-          src="assets/images/Account-photo.png"
-          alt="Фотография пользователя"
-          class="header__accountphoto" />
+      <div class="container header__container">
+        <a class="logo" href="#">
+          <img src="assets/images/logo.png" alt="" class="logo__img" />
+          <span class="logo__text">You.Do</span>
+        </a>
+        <div class="input">
+          <object
+            class="input__icon"
+            data="assets/icons/search-md.svg"
+            type="image/svg+xml"
+            aria-hidden="true"></object>
+          <input type="text" class="input__control" placeholder="Поиск" />
+        </div>
+        <div class="header__account">
+          <object
+            data="assets/icons/bell-01.svg"
+            type="image/svg+xml"
+            class="header__notifications header__notifications_notread"></object>
+          <object
+            data="assets/icons/settings-02.svg"
+            type="image/svg+xml"
+            class="header__settings"></object>
+          <img
+            src="assets/images/Account-photo.png"
+            alt="Фотография пользователя"
+            class="header__accountphoto" />
+        </div>
       </div>
     </header>
+    <div class="table">
+      <h1 class="table__name">UX/UI design</h1>
+      <span class="table__status">в процессе</span>
+      <div class="users-amount">
+        <object
+          data="assets/icons/users-01.svg"
+          type="image/svg+xml"
+          class="user-amount__logo"></object>
+        <p class="user-amount__text">8 участников</p>
+      </div>
+      <button class="add-task">
+        <object
+          data="assets/icons/plus.svg"
+          type="image/svg+xml"
+          class="addtask__icon"></object>
+        <span class="add-task__text">Добавить задачу</span>
+      </button>
+      .
+    </div>
   </body>
 </html>

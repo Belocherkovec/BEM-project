@@ -1,6 +1,6 @@
 @import url(formular-font/stylesheet.css);
 
-/* Reset Styles (not all) */
+/* Reset and Set styles (not all) */
 *,
 *::after,
 *::before {
@@ -12,14 +12,19 @@ a {
 }
 
 body {
-  max-width: 1512px;
-  margin: 0 auto;
-  padding: 0 30px;
   font-family: 'Formular';
   font-style: normal;
   font-size: 14px;
   font-weight: normal;
-  margin-top: 16px;
+  margin: 0;
+}
+
+/* Container */
+
+.container {
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 /* Colors */
@@ -30,8 +35,12 @@ body {
   --black-10: #e5e5e5;
   --black-5: #f4f4f4;
 }
-
 .header {
+  height: 64px;
+  border-bottom: 1px solid var(--black-10);
+}
+.header__container {
+  padding-top: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,10 +86,27 @@ body {
   background-color: var(--black-10);
 }
 .header__account {
+  display: flex;
+  align-items: center;
 }
-.header__notifications {
+
+.header__notifications_notread {
+  fill: #a8a8a8;
 }
+
+.header__notifications_notread::after {
+  content: 'aaaaa';
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .header__settings {
+  margin-left: 16px;
 }
 .header__accountphoto {
+  margin-left: 24px;
 }
