@@ -1,0 +1,86 @@
+@import url(formular-font/stylesheet.css);
+
+/* Reset Styles (not all) */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: 0 30px;
+  font-family: 'Formular';
+  font-style: normal;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 16px;
+}
+
+/* Colors */
+
+:root {
+  --black: #252525;
+  --black-40: #a8a8a8;
+  --black-10: #e5e5e5;
+  --black-5: #f4f4f4;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: inline-block;
+}
+.logo__img {
+  vertical-align: middle;
+}
+.logo__text {
+  font-weight: 500;
+  color: var(--black);
+}
+.input {
+  width: 600px;
+  height: 32px;
+  position: relative;
+}
+.input__icon {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  padding-left: 12px;
+}
+.input__control {
+  outline: none;
+  height: inherit;
+  width: 100%;
+  padding-left: 40px;
+  font-family: inherit;
+  border: none;
+  background-color: var(--black-5);
+  border-radius: 8px;
+  transition: all 0.3s;
+  color: var(--black);
+}
+.input__control:focus {
+  outline: none;
+  background-color: var(--black-10);
+}
+.header__account {
+}
+.header__notifications {
+}
+.header__settings {
+}
+.header__accountphoto {
+}
