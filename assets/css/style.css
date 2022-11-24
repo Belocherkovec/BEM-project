@@ -64,13 +64,22 @@ body {
   background: url(../images/user5.png);
 }
 
+/* fixed */
+
+.header_fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
 /* Header */
 
 .header {
   height: 64px;
   border-bottom: 1px solid var(--black-10);
+  background-color: var(--white);
 }
-.header__container {
+.header_container {
   padding-top: 16px;
   display: flex;
   justify-content: space-between;
@@ -151,7 +160,18 @@ body {
 
 /* table */
 
-.table__container {
+.table {
+  background-color: var(--white);
+}
+
+.table_fixed {
+  position: fixed;
+  top: 64px;
+  width: 100%;
+  z-index: 2;
+}
+
+.table_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -209,10 +229,10 @@ body {
   display: flex;
   align-items: center;
 }
-.user-amount__logo {
+.users-amount__logo {
   margin-right: 8px;
 }
-.user-amount__text {
+.users-amount__text {
   vertical-align: middle;
   color: var(--black-40);
 }
@@ -252,7 +272,11 @@ body {
 
 /* Table control */
 
-.table__control-container {
+.table {
+  border-bottom: 1px solid var(--black-10);
+}
+
+.table__control__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -290,6 +314,10 @@ body {
 }
 .view-switch__icon {
   display: inline-block;
+}
+
+.view-switch__table,
+.view-switch__list {
   cursor: pointer;
 }
 
@@ -307,7 +335,7 @@ body {
   stroke: var(--black-40);
 }
 
-.view-switch__icon-active .view-switch__table {
+.view-switch__icon_active.view-switch__table {
   stroke: var(--black);
 }
 
@@ -315,20 +343,31 @@ body {
   fill: var(--black-40);
 }
 
-.view-switch__icon-active .view-switch__list {
+.view-switch__icon_active.view-switch__list {
   fill: var(--black);
 }
 
 /* card-list */
 
 .card-list {
-  border-top: 1px solid var(--black-10);
   background-color: var(--bg);
   min-height: 72.5vh;
+  padding-bottom: 60px;
+}
+
+.card-list_no-fix {
+  position: relative;
+  top: 271px;
+  z-index: 1;
 }
 .card-list__container {
   display: flex;
   gap: 40px;
+}
+.card-list__container_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 .card-list__column {
   max-width: 333px;
@@ -337,6 +376,10 @@ body {
   flex-direction: column;
   gap: 16px;
 }
+.card-list__column_list {
+  max-width: none;
+}
+
 .card-list__title {
   font-weight: 500;
   font-size: 14px;
