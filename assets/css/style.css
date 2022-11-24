@@ -280,6 +280,7 @@ body {
   border-radius: 2px 2px 0px 0px;
   margin-top: 6px;
   cursor: default;
+  left: 0;
 }
 .table__link:nth-last-child(1) {
   padding: 0;
@@ -323,6 +324,7 @@ body {
 .card-list {
   border-top: 1px solid var(--black-10);
   background-color: var(--bg);
+  min-height: 72.5vh;
 }
 .card-list__container {
   display: flex;
@@ -352,10 +354,6 @@ body {
 }
 .card-item__context {
   stroke: var(--black);
-}
-.status-tag {
-}
-.table__status-tag {
 }
 .card-item__title {
   font-size: 16px;
@@ -394,6 +392,4 @@ body {
 .card-item__logo {
   vertical-align: bottom;
   margin-right: 6px;
-}
-.card-item__text {
 }
