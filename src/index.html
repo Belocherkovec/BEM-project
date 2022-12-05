@@ -5,70 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>You do. Task management</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
-    <header class="header header_fixed">
-      <div class="container header_container">
+    <header class="header">
+      <!-- Для header необходим background, на всю ширину viewport. если убрать container внутри и добавить его к header, то background будет обрезан по краям  -->
+      <div class="container header__container">
         <a class="logo" href="#">
-          <img src="assets/images/logo.png" alt="" class="logo__img" />
+          <img src="images/logo.png" alt="" class="logo__img" />
           <span class="logo__text">You.Do</span>
         </a>
-        <div class="input">
-          <object class="input__icon" data="assets/icons/search-md.svg" type="image/svg+xml" aria-hidden="true"></object>
-          <input type="text" class="input__control" placeholder="Поиск" />
+        <div class="search">
+          <object class="search__icon" data="icons/search-md.svg" type="image/svg+xml" aria-hidden="true"></object>
+          <input type="text" class="search__input" placeholder="Поиск" />
         </div>
-        <div class="header__account">
-          <object data="assets/icons/bell-01.svg" type="image/svg+xml" class="header__notifications header__notifications_notread"></object>
-          <object data="assets/icons/settings-02.svg" type="image/svg+xml" class="header__settings"></object>
-          <a href="#" class="header__user user-1"></a>
+        <div class="account">
+          <object data="icons/bell-01.svg" type="image/svg+xml" class="account__notifications"></object>
+          <object data="icons/settings-02.svg" type="image/svg+xml" class="account__settings"></object>
+          <div href="#" class="header__user user">
+            <img src="images/user1.png" alt="Фотография пользователя" class="user__photo" />
+          </div>
         </div>
       </div>
     </header>
-    <div class="table table_fixed">
-      <div class="container table_container">
-        <div class="table__item">
-          <h1 class="table__name">UX/UI design</h1>
-          <span class="status-tag table__status-tag">в процессе</span>
+    <section class="board-managment">
+      <div class="container board-managment__container">
+        <div class="board-about">
+          <h1 class="board-about__title">UX/UI design</h1>
+          <span class="status-tag board__status-tag">в процессе</span>
           <div class="users-amount">
-            <object data="assets/icons/users-01.svg" type="image/svg+xml" class="users-amount__logo"></object>
+            <object data="icons/users-01.svg" type="image/svg+xml" class="users-amount__logo"></object>
             <p class="users-amount__text">8 участников</p>
           </div>
         </div>
         <button class="add-task" type="button">
-          <object data="assets/icons/plus.svg" type="image/svg+xml" class="addtask__icon"></object>
+          <object data="icons/plus.svg" type="image/svg+xml" class="addtask__icon"></object>
           <span class="add-task__text">Добавить задачу</span>
         </button>
-      </div>
-      <div class="table__control">
-        <div class="container table__control__container">
-          <div class="table__tabs">
-            <a href="#" class="table__link table__link-active">Доска</a>
-            <a href="#" class="table__link">Комментарии</a>
-            <a href="#" class="table__link">Активность</a>
-            <a href="#" class="table__link">Файлы</a>
+        <div class="board-control">
+          <!-- На этом моменте для блока board-control нужно задать внешние отступы. Можно добавить класс элемента board-managment__board-control или в css сделать через вложенность. Я сделал через второй вариант и хочу знать, можно ли так делать? -->
+          <div class="board-control__tabs">
+            <a href="#" class="board-control__link board-control__link-active">Доска</a>
+            <a href="#" class="board-control__link">Комментарии</a>
+            <a href="#" class="board-control__link">Активность</a>
+            <a href="#" class="board-control__link">Файлы</a>
           </div>
           <div class="view-switch">
-            <span class="view-switch__icon">
-              <svg class="view-switch__table view-switch__icon_active">
-                <use xlink:href="#table"></use>
-              </svg>
-            </span>
-            <span class="view-switch__icon">
-              <svg class="view-switch__list">
-                <use xlink:href="#list"></use>
-              </svg>
-            </span>
+            <svg class="view-switch__icon switch-table view-switch__icon-active">
+              <use xlink:href="#table"></use>
+            </svg>
+            <svg class="view-switch__icon switch-list">
+              <use xlink:href="#list"></use>
+            </svg>
           </div>
         </div>
       </div>
-    </div>
-    <div class="card-list card-list_no-fix">
+    </section>
+    <section class="card-list card-list_no-fix">
       <div class="container card-list__container">
         <div class="card-list__column">
           <h2 class="card-list__title">Нужно сделать</h2>
           <div class="card-item">
             <div class="card-item__header">
+              <!-- card-item__header используется, как обёртка для тега и троеточия, которое вызывает контекстное меню. -->
               <span class="status-tag status-tag_color-1">Планирование</span>
               <svg class="card-item__context" width="16" height="4" viewBox="0 0 16 4">
                 <use xlink:href="#context"></use>
@@ -76,15 +75,23 @@
             </div>
             <h3 class="card-item__title">Сделать лендинг на основе существующей дизайн-системы</h3>
             <div class="card-item__users">
-              <a href="#" class="card-item__user user-2"></a>
-              <a href="#" class="card-item__user user-3"></a>
-              <a href="#" class="card-item__user user-4"></a>
-              <a href="#" class="card-item__user user-5"></a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user1.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user3.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user4.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user5.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
               <span class="card-item__user-hidden">+3</span>
             </div>
-            <div class="card-item__date">
-              <object data="assets/icons/calendar.svg" type="image/svg+xml" class="card-item__logo"></object>
-              <span class="card-item__text">07.07.21</span>
+            <div class="date">
+              <object data="icons/calendar.svg" type="image/svg+xml" class="date__logo"></object>
+              <span class="date__text">07.07.21</span>
             </div>
           </div>
           <div class="card-item">
@@ -96,12 +103,16 @@
             </div>
             <h3 class="card-item__title">Сделать ревью страницы заказов вместе с разработчиком</h3>
             <div class="card-item__users">
-              <a href="#" class="card-item__user user-2"></a>
-              <a href="#" class="card-item__user user-3"></a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user2.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user3.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
             </div>
-            <div class="card-item__date">
-              <object data="assets/icons/calendar.svg" type="image/svg+xml" class="card-item__logo"></object>
-              <span class="card-item__text">01.07.21</span>
+            <div class="date">
+              <object data="icons/calendar.svg" type="image/svg+xml" class="date__logo"></object>
+              <span class="date__text">01.07.21</span>
             </div>
           </div>
         </div>
@@ -116,12 +127,16 @@
             </div>
             <h3 class="card-item__title">Создать новые компоненты и почистить старые</h3>
             <div class="card-item__users">
-              <a href="#" class="card-item__user user-2"></a>
-              <a href="#" class="card-item__user user-5"></a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user2.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user5.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
             </div>
-            <div class="card-item__date">
-              <object data="assets/icons/calendar.svg" type="image/svg+xml" class="card-item__logo"></object>
-              <span class="card-item__text">07.07.21</span>
+            <div class="date">
+              <object data="icons/calendar.svg" type="image/svg+xml" class="date__logo"></object>
+              <span class="date__text">07.07.21</span>
             </div>
           </div>
         </div>
@@ -136,15 +151,24 @@
             </div>
             <h3 class="card-item__title">Сделать ресерч</h3>
             <div class="card-item__users">
-              <a href="#" class="card-item__user user-2"></a>
-              <a href="#" class="card-item__user user-3"></a>
-              <a href="#" class="card-item__user user-4"></a>
-              <a href="#" class="card-item__user user-5"></a>
+              <!-- Вопрос про обёртку пользователя, ты говорил что обёртку из 'a' нужно убрать, я её здесь пока что не убрал т.к по логике работы нам нужна возможно перейти на 'страницу пользователя', а кроме изображения о пользователе не выводится какой-либо информации -->
+              <a href="#" class="card-item__user user">
+                <img src="images/user2.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user3.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user4.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user5.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
               <span class="card-item__user-hidden">+3</span>
             </div>
-            <div class="card-item__date">
-              <object data="assets/icons/calendar.svg" type="image/svg+xml" class="card-item__logo"></object>
-              <span class="card-item__text">07.07.21</span>
+            <div class="date">
+              <object data="icons/calendar.svg" type="image/svg+xml" class="date__logo"></object>
+              <span class="date__text">07.07.21</span>
             </div>
           </div>
           <div class="card-item">
@@ -156,12 +180,16 @@
             </div>
             <h3 class="card-item__title">Переделать дизайн карточек</h3>
             <div class="card-item__users">
-              <a href="#" class="card-item__user user-3"></a>
-              <a href="#" class="card-item__user user-4"></a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user3.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user4.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
             </div>
-            <div class="card-item__date">
-              <object data="assets/icons/calendar.svg" type="image/svg+xml" class="card-item__logo"></object>
-              <span class="card-item__text">07.07.21</span>
+            <div class="date">
+              <object data="icons/calendar.svg" type="image/svg+xml" class="date__logo"></object>
+              <span class="date__text">07.07.21</span>
             </div>
           </div>
           <div class="card-item">
@@ -173,15 +201,23 @@
             </div>
             <h3 class="card-item__title">Страница заказа: докрутить стили и изменить цвета</h3>
             <div class="card-item__users">
-              <a href="#" class="card-item__user user-2"></a>
-              <a href="#" class="card-item__user user-3"></a>
-              <a href="#" class="card-item__user user-4"></a>
-              <a href="#" class="card-item__user user-5"></a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user2.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user3.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user4.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user5.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
               <span class="card-item__user-hidden">+7</span>
             </div>
-            <div class="card-item__date">
-              <object data="assets/icons/calendar.svg" type="image/svg+xml" class="card-item__logo"></object>
-              <span class="card-item__text">07.07.21</span>
+            <div class="date">
+              <object data="icons/calendar.svg" type="image/svg+xml" class="date__logo"></object>
+              <span class="date__text">07.07.21</span>
             </div>
           </div>
         </div>
@@ -196,17 +232,21 @@
             </div>
             <h3 class="card-item__title">Сделать лендинг на основе существующей дизайн-системы</h3>
             <div class="card-item__users">
-              <a href="#" class="card-item__user user-3"></a>
-              <a href="#" class="card-item__user user-5"></a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user3.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
+              <a href="#" class="card-item__user user">
+                <img src="images/user5.png" alt="Фотография пользователя" class="user__photo" />
+              </a>
             </div>
-            <div class="card-item__date">
-              <object data="assets/icons/calendar.svg" type="image/svg+xml" class="card-item__logo"></object>
-              <span class="card-item__text">07.07.21</span>
+            <div class="date">
+              <object data="icons/calendar.svg" type="image/svg+xml" class="date__logo"></object>
+              <span class="date__text">07.07.21</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <svg style="display: none">
       <symbol id="table" xmlns="http://www.w3.org/2000/svg">
@@ -253,6 +293,6 @@
           stroke-linejoin="round" />
       </symbol>
     </svg>
-    <script src="assets/js/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
